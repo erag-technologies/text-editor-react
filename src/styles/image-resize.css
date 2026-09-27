@@ -1,0 +1,129 @@
+.erag-editor {
+    --erag-image-resize-color: var(--erag-editor-active-color);
+    --erag-image-resize-handle-size: 12px;
+    --erag-image-delete-background: var(--erag-editor-danger-color);
+}
+
+.erag-editor .erag-image-resize {
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    border: 2px solid var(--erag-image-resize-color);
+}
+
+.erag-editor .erag-image-resize__handle {
+    position: absolute;
+    width: var(--erag-image-resize-handle-size);
+    height: var(--erag-image-resize-handle-size);
+    padding: 0;
+    touch-action: none;
+    pointer-events: auto;
+    background: var(--erag-editor-surface);
+    border: 2px solid var(--erag-image-resize-color);
+    border-radius: 2px;
+}
+
+.erag-editor .erag-image-resize__handle--north-west {
+    top: calc(var(--erag-image-resize-handle-size) / -2);
+    left: calc(var(--erag-image-resize-handle-size) / -2);
+    cursor: nwse-resize;
+}
+
+.erag-editor .erag-image-resize__handle--north-east {
+    top: calc(var(--erag-image-resize-handle-size) / -2);
+    right: calc(var(--erag-image-resize-handle-size) / -2);
+    cursor: nesw-resize;
+}
+
+.erag-editor .erag-image-resize__handle--south-west {
+    bottom: calc(var(--erag-image-resize-handle-size) / -2);
+    left: calc(var(--erag-image-resize-handle-size) / -2);
+    cursor: nesw-resize;
+}
+
+.erag-editor .erag-image-resize__handle--south-east {
+    right: calc(var(--erag-image-resize-handle-size) / -2);
+    bottom: calc(var(--erag-image-resize-handle-size) / -2);
+    cursor: nwse-resize;
+}
+
+.erag-editor .erag-image-resize__delete {
+    position: absolute;
+    z-index: 2;
+    top: 6px;
+    right: 6px;
+    display: grid;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    place-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    pointer-events: auto;
+    background: var(--erag-image-delete-background);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px rgb(15 23 42 / 22%);
+}
+
+.erag-editor .erag-image-resize__delete .erag-icon {
+    width: 13px;
+    height: 13px;
+}
+
+.erag-editor .erag-image-resize__delete:hover,
+.erag-editor .erag-image-resize__delete:focus-visible {
+    background: var(--erag-editor-danger-hover);
+    outline: 2px solid #ffffff;
+    outline-offset: 1px;
+}
+
+.erag-editor .erag-image-resize__delete::after {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 7px);
+    width: max-content;
+    max-width: 190px;
+    padding: 6px 8px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+    pointer-events: none;
+    visibility: hidden;
+    background: var(--erag-editor-tooltip-surface);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgb(15 23 42 / 18%);
+    content: attr(data-erag-tooltip);
+    opacity: 0;
+    transform: translateY(2px);
+    transition:
+        opacity 120ms ease,
+        transform 120ms ease;
+}
+
+.erag-editor .erag-image-resize__delete:hover::after,
+.erag-editor .erag-image-resize__delete:focus-visible::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.erag-editor .erag-image-resize__delete.erag-is-loading {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+.erag-editor .erag-image-resize__delete.erag-is-loading .erag-icon {
+    animation: erag-image-delete-pulse 800ms ease-in-out infinite alternate;
+}
+
+.erag-editor .erag-image-resize__delete.erag-has-error {
+    background: #991b1b;
+}
+
+@keyframes erag-image-delete-pulse {
+    to {
+        opacity: 0.35;
+    }
+}
