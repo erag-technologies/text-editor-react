@@ -10,10 +10,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/erag-technologies/text-editor-react.git"
+        "url": "git+https://github.com/the-erag/text-editor-react.git"
     },
     "bugs": {
-        "url": "https://github.com/erag-technologies/text-editor-react/issues"
+        "url": "https://github.com/the-erag/text-editor-react/issues"
     },
     "homepage": "https://erag.in/text-editor-react/index.html",
     "keywords": [
