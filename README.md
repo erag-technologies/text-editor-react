@@ -59,4 +59,4 @@ Complete installation, configuration, examples, feature guides, and API document
 
 ## ⭐ Support
 
-If you like this package, give it a [GitHub star](https://github.com/erag-technologies/text-editor-react).
+If you like this package, give it a [GitHub star](https://github.com/the-erag/text-editor-react).
