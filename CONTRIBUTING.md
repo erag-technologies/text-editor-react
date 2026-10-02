@@ -4,7 +4,7 @@ Thank you for helping improve `@erag/text-editor-react`. Bug reports, documentat
 
 ## Before You Start
 
-- Search the [existing issues](https://github.com/erag-technologies/text-editor-react/issues) before opening a new one.
+- Search the [existing issues](https://github.com/the-erag/text-editor-react/issues) before opening a new one.
 - Discuss large features or public API changes in an issue before implementation.
 - Use Node.js 24 or newer and a current npm release.
 
@@ -45,7 +45,7 @@ npm run lint:check
 
 ## Bug Reports
 
-Open a [bug report](https://github.com/erag-technologies/text-editor-react/issues/new) containing:
+Open a [bug report](https://github.com/the-erag/text-editor-react/issues/new) containing:
 
 - A minimal reproduction and exact steps.
 - Expected and actual behavior.
